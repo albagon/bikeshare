@@ -19,8 +19,8 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        city = input("Specify a city to analyze (Chicago, New York or Washington): ")
-        if city.lower() not in ('chicago', 'new york', 'washington'):
+        city = input("Specify a city to analyze (Chicago, New York or Washington): ").lower()
+        if city not in ('chicago', 'new york', 'washington'):
             print("Not an appropriate city. Please try again.")
             continue
         else:
@@ -28,8 +28,8 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     while True:
-        month = input("Specify a month to analyze (all, January, February, ... June): ")
-        if month.lower() not in ('all', 'january', 'february', 'march', 'april', 'may', 'june'):
+        month = input("Specify a month to analyze (all, January, February, ... June): ").lower()
+        if month not in ('all', 'january', 'february', 'march', 'april', 'may', 'june'):
             print("Not an appropriate month. Please try again.")
             continue
         else:
@@ -37,8 +37,8 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input("Specify a day of week to analyze (all, Monday, Tuesday, ... Sunday): ")
-        if day.lower() not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'):
+        day = input("Specify a day of week to analyze (all, Monday, Tuesday, ... Sunday): ").lower()
+        if day not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'):
             print("Not an appropriate day of week. Please try again.")
             continue
         else:
@@ -77,7 +77,7 @@ def load_data(city, month, day):
     if month != 'all':
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month.lower()) + 1
+        month = months.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df.month == month]
