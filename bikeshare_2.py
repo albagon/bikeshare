@@ -100,8 +100,16 @@ def time_stats(df):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     # display the most common month
-    popular_month = df['month'].mode().values
-    print('Most Popular Month:', popular_month)
+    popular_month_int = df['month'].mode().values
+    # use the index of the months list to get the corresponding month
+    months = ['January', 'February', 'March', 'April', 'May', 'June']
+    popular_month_str = []
+
+    for i in range(len(popular_month_int)):
+        value = popular_month_int[i]
+        popular_month_str.append(months[value - 1])
+
+    print('Most Popular Month:', popular_month_str)
 
     # display the most common day of week
     popular_day = df['day_of_week'].mode().values
@@ -194,6 +202,7 @@ def user_stats(df):
 def main():
     while True:
         city, month, day = get_filters()
+        print('Filter', city, month, day, sep=' -> ')
         df = load_data(city, month, day)
 
         time_stats(df)
