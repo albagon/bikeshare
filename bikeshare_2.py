@@ -16,7 +16,10 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('   __o')
+    print(' _`\\<,_')
+    print('(*)/ (*)   Hello! Let\'s explore some US bikeshare data!')
+    print('-'*55)
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("Specify a city to analyze (Chicago, New York or Washington): ").lower()
@@ -44,7 +47,7 @@ def get_filters():
         else:
             break
 
-    print('-'*40)
+    print('-'*55)
     return city, month, day
 
 
@@ -123,7 +126,7 @@ def time_stats(df):
     print('Most Popular Start Hour:', popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*55)
 
 
 def station_stats(df):
@@ -146,7 +149,7 @@ def station_stats(df):
     print('Most Frequent Combination of Start and End Station:', popular_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*55)
 
 
 def trip_duration_stats(df):
@@ -164,7 +167,7 @@ def trip_duration_stats(df):
     print('Average Trip Duration:', datetime.timedelta(seconds=int(mean_travel_time)))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*55)
 
 
 def user_stats(df):
@@ -196,7 +199,7 @@ def user_stats(df):
         print('\nBirth year data not available.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*55)
 
 
 def main():
